@@ -29,4 +29,5 @@
     </string>
     <string name="action_settings">settings</string>
     <string name="action_favorite">favorite</string>
+    <string name="text_header">Message Received</string>
 </resources>

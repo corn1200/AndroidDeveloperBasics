@@ -1,0 +1,68 @@
+package com.example.androiddeveloperbasics;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class SecondActivity extends AppCompatActivity {
+    public static final String EXTRA_REPLY = "com.example.androiddeveloperbasicsm.extra.REPLY";
+    private EditText mReply;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+
+        Toolbar myToolBar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolBar);
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        TextView textView = findViewById(R.id.text_message);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        textView.setText(message);
+
+        mReply = findViewById(R.id.editText_second);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Toast.makeText(this.getApplicationContext(), "action_settings", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.action_favorite:
+                Toast.makeText(this.getApplicationContext(), "action_favorite", Toast.LENGTH_SHORT).show();
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void returnReply(View view) {
+        String reply = mReply.getText().toString();
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_REPLY, reply);
+        setResult(RESULT_OK, replyIntent);
+        finish();
+    }
+}
