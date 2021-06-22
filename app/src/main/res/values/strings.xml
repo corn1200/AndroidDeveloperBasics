@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidDeveloperBasics</string>
+    <string name="app_name">umjunsik</string>
     <string name="button_label_toast">Toast</string>
     <string name="button_label_count">Count</string>
     <string name="count_initial_value">0</string>
@@ -27,4 +27,6 @@
         \n\n
         <b><i>One After 909</i></b> — A song recorded for the <i>Let It Be</i> album was actually worked on way back in the beginning, six years earlier. This take shows how they did it much more slowly, with an R&amp;B feel to it.
     </string>
+    <string name="action_settings">settings</string>
+    <string name="action_favorite">favorite</string>
 </resources>
