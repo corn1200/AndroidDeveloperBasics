@@ -25,11 +25,11 @@ public class SecondActivity extends AppCompatActivity {
 
         Toolbar myToolBar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = findViewById(R.id.text_message);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         textView.setText(message);
 
         mReply = findViewById(R.id.editText_second);

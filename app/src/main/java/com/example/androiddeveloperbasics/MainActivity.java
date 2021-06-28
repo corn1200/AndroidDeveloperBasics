@@ -142,4 +142,9 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivityForResult(intent, TEXT_REQUEST);
     }
+
+    public void moveToPage1(View view) {
+        Intent intent = new Intent(this, ImplicitIntentActivity.class);
+        startActivityForResult(intent, TEXT_REQUEST);
+    }
 }
