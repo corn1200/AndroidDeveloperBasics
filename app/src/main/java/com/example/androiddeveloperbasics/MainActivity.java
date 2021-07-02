@@ -145,6 +145,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void moveToPage1(View view) {
         Intent intent = new Intent(this, ImplicitIntentActivity.class);
-        startActivityForResult(intent, TEXT_REQUEST);
+        startActivity(intent);
+    }
+
+    public void moveToPage2(View view) {
+        Intent intent = new Intent(this, CafeActivity.class);
+        startActivity(intent);
     }
 }
