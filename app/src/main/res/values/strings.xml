@@ -55,4 +55,7 @@
     <string name="enter_phone_hint">Enter your phone</string>
     <string name="note_label">Note</string>
     <string name="enter_note_hint">Enter Your note</string>
+    <string name="same_day_messenger_service">Same day messenger service</string>
+    <string name="next_day_ground_delivery">Next day ground delivery</string>
+    <string name="pick_up">Pick up</string>
 </resources>
