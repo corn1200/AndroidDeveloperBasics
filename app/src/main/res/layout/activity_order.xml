@@ -81,14 +81,15 @@
 
     <EditText
         android:id="@+id/phone_text"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="@string/enter_phone_hint"
         android:inputType="phone"
         app:layout_constraintBaseline_toBaselineOf="@+id/phone_label"
-        app:layout_constraintStart_toEndOf="@+id/phone_label" />
+        app:layout_constraintStart_toEndOf="@+id/phone_label"
+        android:imeOptions="actionSend"/>
 
     <TextView
         android:id="@+id/note_label"
@@ -106,8 +107,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
-        android:inputType="textMultiLine|textCapSentences"
         android:hint="@string/enter_note_hint"
+        android:inputType="textMultiLine|textCapSentences"
         app:layout_constraintBaseline_toBaselineOf="@+id/note_label"
         app:layout_constraintStart_toEndOf="@+id/note_label" />
 
@@ -128,7 +129,7 @@
         android:layout_marginStart="24dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/delivery_label" >
+        app:layout_constraintTop_toBottomOf="@+id/delivery_label">
 
         <RadioButton
             android:id="@+id/sameday"
@@ -141,9 +142,9 @@
             android:id="@+id/nextday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:onClick="onRadioButtonClicked"
-            android:text="@string/next_day_ground_delivery"
-            android:checked="true"/>
+            android:text="@string/next_day_ground_delivery" />
 
         <RadioButton
             android:id="@+id/pickup"
@@ -152,5 +153,16 @@
             android:onClick="onRadioButtonClicked"
             android:text="@string/pick_up" />
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/label_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/phone_text"
+        app:layout_constraintTop_toBottomOf="@+id/address_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
