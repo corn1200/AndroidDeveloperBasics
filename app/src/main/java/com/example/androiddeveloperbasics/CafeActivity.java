@@ -39,7 +39,7 @@ public class CafeActivity extends AppCompatActivity {
                         "action_settings", Toast.LENGTH_SHORT).show();
                 return true;
 
-            case R.id.action_favorite:
+            case R.id.action_favorites:
                 Toast.makeText(this.getApplicationContext(),
                         "action_favorite", Toast.LENGTH_SHORT).show();
                 return true;
