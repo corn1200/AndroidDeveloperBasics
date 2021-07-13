@@ -103,23 +103,7 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                Toast.makeText(this.getApplicationContext(),
-                        "action_settings", Toast.LENGTH_SHORT).show();
-                return true;
-
-            case R.id.action_favorites:
-                Toast.makeText(this.getApplicationContext(),
-                        "action_favorite", Toast.LENGTH_SHORT).show();
-                return true;
-
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
-
-        }
+        return new MainToobar().onSelectItems(item, this);
     }
 
     public void displayToast(String message) {

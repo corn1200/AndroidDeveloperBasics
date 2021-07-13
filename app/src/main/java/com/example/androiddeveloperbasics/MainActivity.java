@@ -1,7 +1,5 @@
 package com.example.androiddeveloperbasics;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -13,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
@@ -103,26 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                Toast.makeText(this.getApplicationContext(),
-                        "action_settings", Toast.LENGTH_SHORT).show();
-                return true;
-
-            case R.id.action_favorites:
-                Toast.makeText(this.getApplicationContext(),
-                        "action_favorite", Toast.LENGTH_SHORT).show();
-                return true;
-
-            case R.id.action_order:
-                return true;
-
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
-
-        }
+        return new MainToobar().onSelectItems(item, this);
     }
 
     @Override
