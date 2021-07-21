@@ -41,7 +41,7 @@ public class ImplicitIntentActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return new MainToobar().onSelectItems(item, this);
+        return new MainToolbar().onSelectItems(item, this);
     }
 
     public void openWebsite(View view) {

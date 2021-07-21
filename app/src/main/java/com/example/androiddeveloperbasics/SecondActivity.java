@@ -79,7 +79,7 @@ public class SecondActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return new MainToobar().onSelectItems(item, this);
+        return new MainToolbar().onSelectItems(item, this);
     }
 
     public void returnReply(View view) {

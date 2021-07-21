@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return new MainToobar().onSelectItems(item, this);
+        return new MainToolbar().onSelectItems(item, MainActivity.this);
     }
 
     @Override
