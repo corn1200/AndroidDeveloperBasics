@@ -1,12 +1,15 @@
 package com.example.androiddeveloperbasics;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -43,6 +46,36 @@ public class MainActivity extends AppCompatActivity {
                 mReplyTextView.setVisibility(View.VISIBLE);
             }
         }
+
+        TextView article_text = findViewById(R.id.article);
+        registerForContextMenu(article_text);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.context_edit:
+                new MainToolbar().displayToast
+                        ("Edit choice clicked.", this.getApplicationContext());
+                return true;
+            case R.id.context_share:
+                new MainToolbar().displayToast
+                        ("Share choice clicked.", this.getApplicationContext());
+                return true;
+            case R.id.context_delete:
+                new MainToolbar().displayToast
+                        ("Delete choice clicked.", this.getApplicationContext());
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_context, menu);
     }
 
     @Override
