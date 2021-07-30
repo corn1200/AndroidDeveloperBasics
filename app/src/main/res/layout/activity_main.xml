@@ -73,20 +73,25 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/move_btn"
+                android:id="@+id/move_btn1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:onClick="moveToPage1"
-                android:text="move to Implicit intents"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="move to Implicit intents" />
 
             <Button
                 android:id="@+id/move_btn2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:onClick="moveToPage2"
-                android:text="move to Cafe intents"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="move to Cafe intents" />
+
+            <Button
+                android:id="@+id/move_btn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="moveToPage3"
+                android:text="move to Dialog intents" />
         </LinearLayout>
 
         <Button

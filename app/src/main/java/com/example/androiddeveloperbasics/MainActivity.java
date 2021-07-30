@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return new MainToolbar().onSelectItems(item, MainActivity.this);
+        return new MainToolbar().onSelectItems(item, this);
     }
 
     @Override
@@ -164,6 +164,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void moveToPage2(View view) {
         Intent intent = new Intent(this, CafeActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveToPage3(View view) {
+        Intent intent = new Intent(this, DialogActivity.class);
         startActivity(intent);
     }
 }

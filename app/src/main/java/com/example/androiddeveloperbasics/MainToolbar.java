@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainToolbar extends AppCompatActivity {
+public class MainToolbar {
     public void displayToast(String message, Context context) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
@@ -37,6 +37,6 @@ public class MainToolbar extends AppCompatActivity {
             default:
                 // Do nothing
         }
-        return super.onOptionsItemSelected(item);
+        return new AppCompatActivity().onOptionsItemSelected(item);
     }
 }
