@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_dialog.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_implicit_intent.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_date_picker.xml" value="0.17755825734549138" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/menu_context.xml" value="0.14722222222222223" />
       </map>
     </option>
