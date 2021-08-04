@@ -171,4 +171,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DialogActivity.class);
         startActivity(intent);
     }
+
+    public void moveToPage4(View view) {
+        Intent intent = new Intent(this, TabActivity.class);
+        startActivity(intent);
+    }
 }

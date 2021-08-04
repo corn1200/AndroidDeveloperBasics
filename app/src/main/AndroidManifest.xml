@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".TabActivity"
+            android:label="Tab Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.androiddeveloperbasics.MainActivity" />
+        </activity>
+        <activity
             android:name=".DialogActivity"
             android:label="Dialog Activity"
             android:parentActivityName=".MainActivity">
@@ -20,10 +28,10 @@
         <activity
             android:name=".OrderActivity"
             android:label="Order Activity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".CafeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.androiddeveloperbasics.MainActivity" />
+                android:value="com.example.androiddeveloperbasics.CafeActivity" />
         </activity>
         <activity
             android:name=".CafeActivity"

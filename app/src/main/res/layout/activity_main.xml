@@ -92,6 +92,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="moveToPage3"
                 android:text="move to Dialog intents" />
+
+            <Button
+                android:id="@+id/move_btn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="moveToPage4"
+                android:text="move to Tab intents" />
         </LinearLayout>
 
         <Button
@@ -110,6 +117,7 @@
             android:ems="10"
             android:hint="Enter Your Message Here"
             android:inputType="textLongMessage"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toStartOf="@+id/button_main"
             app:layout_constraintRight_toLeftOf="@id/button_main"
             app:layout_constraintStart_toStartOf="parent"
