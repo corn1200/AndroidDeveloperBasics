@@ -3,16 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_dialog.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_implicit_intent.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_order.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_second.xml" value="0.17755825734549138" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_tab.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_date_picker.xml" value="0.17755825734549138" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_tab1.xml" value="0.13858695652173914" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_tab2.xml" value="0.13858695652173914" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_tab3.xml" value="0.13858695652173914" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_time_picker.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/nav_header_main.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/toolbar.xml" value="0.17755825734549138" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/drawer.xml" value="0.2833333333333333" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/menu.xml" value="0.16574074074074074" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/menu_context.xml" value="0.14722222222222223" />
       </map>
     </option>
@@ -22,5 +29,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
