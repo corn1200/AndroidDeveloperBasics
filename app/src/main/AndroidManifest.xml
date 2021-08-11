@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".RecyclerActivity"
+            android:label="Recycler Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.androiddeveloperbasics.MainActivity" />
+        </activity>
+        <activity
             android:name=".TabActivity"
             android:label="Tab Activity"
             android:parentActivityName=".MainActivity">

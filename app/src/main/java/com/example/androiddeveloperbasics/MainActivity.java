@@ -233,6 +233,11 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void moveToPage5(View view) {
+        Intent intent = new Intent(this, RecyclerActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

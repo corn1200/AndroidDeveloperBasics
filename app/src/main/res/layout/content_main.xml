@@ -49,6 +49,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="moveToPage4"
                 android:text="move to Tab intents" />
+
+            <Button
+                android:id="@+id/move_btn5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="moveToPage5"
+                android:text="move to Recycler intents" />
         </LinearLayout>
 
         <Button
