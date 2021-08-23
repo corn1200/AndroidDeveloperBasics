@@ -23,7 +23,8 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_second.xml" value="0.17755825734549138" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_tab.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/content_main.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/content_recycler.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_date_picker.xml" value="0.17755825734549138" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_tab1.xml" value="0.13858695652173914" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_tab2.xml" value="0.13858695652173914" />
@@ -31,6 +32,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_time_picker.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/nav_header_main.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/toolbar.xml" value="0.17755825734549138" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/wordlist_item.xml" value="0.17755825734549138" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/drawer.xml" value="0.2833333333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/menu.xml" value="0.16574074074074074" />
