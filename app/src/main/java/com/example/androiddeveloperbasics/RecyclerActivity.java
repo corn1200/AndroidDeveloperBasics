@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.LinkedList;
 
@@ -19,10 +22,23 @@ public class RecyclerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
-
         Toolbar myToolBar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int wordListSize = mWordList.size();
+//                Add a new word to the wordList.
+                mWordList.addLast("+ Word" + wordListSize);
+//                Notify the adapter, that the data has changed.
+                mRecyclerView.getAdapter().notifyItemInserted(wordListSize);
+//                Scroll to the bottom.
+                mRecyclerView.smoothScrollToPosition(wordListSize);
+            }
+        });
 
 //        Put initial data into the word list.
         for (int i = 0; i < 20; i++) {
