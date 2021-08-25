@@ -205,38 +205,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void launchSecondActivity(View view) {
-        Log.d(LOG_TAG, "Button clicked!");
-        String message = mMessageEditText.getText().toString();
-        Intent intent = new Intent(this, SecondActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivityForResult(intent, TEXT_REQUEST);
-    }
-
-    public void moveToPage1(View view) {
-        Intent intent = new Intent(this, ImplicitIntentActivity.class);
-        startActivity(intent);
-    }
-
-    public void moveToPage2(View view) {
-        Intent intent = new Intent(this, CafeActivity.class);
-        startActivity(intent);
-    }
-
-    public void moveToPage3(View view) {
-        Intent intent = new Intent(this, DialogActivity.class);
-        startActivity(intent);
-    }
-
-    public void moveToPage4(View view) {
-        Intent intent = new Intent(this, TabActivity.class);
-        startActivity(intent);
-    }
-
-    public void moveToPage5(View view) {
-        Intent intent = new Intent(this, RecyclerActivity.class);
-        startActivity(intent);
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -280,5 +248,43 @@ public class MainActivity extends AppCompatActivity
 
     public void displayToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void launchSecondActivity(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        String message = mMessageEditText.getText().toString();
+        Intent intent = new Intent(this, SecondActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivityForResult(intent, TEXT_REQUEST);
+    }
+
+    public void moveToPage1(View view) {
+        Intent intent = new Intent(this, ImplicitIntentActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveToPage2(View view) {
+        Intent intent = new Intent(this, CafeActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveToPage3(View view) {
+        Intent intent = new Intent(this, DialogActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveToPage4(View view) {
+        Intent intent = new Intent(this, TabActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveToPage5(View view) {
+        Intent intent = new Intent(this, RecyclerActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveToPage6(View view) {
+        Intent intent = new Intent(this, ScorekeeperActivity.class);
+        startActivity(intent);
     }
 }

@@ -4,149 +4,160 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/move_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/move_btn1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="moveToPage1"
-                android:text="move to Implicit intents" />
-
-            <Button
-                android:id="@+id/move_btn2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="moveToPage2"
-                android:text="move to Cafe intents" />
-
-            <Button
-                android:id="@+id/move_btn3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="moveToPage3"
-                android:text="move to Dialog intents" />
-
-            <Button
-                android:id="@+id/move_btn4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="moveToPage4"
-                android:text="move to Tab intents" />
-
-            <Button
-                android:id="@+id/move_btn5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="moveToPage5"
-                android:text="move to Recycler intents" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/button_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="launchSecondActivity"
-            android:text="Send"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/move_activity" />
-
-        <EditText
-            android:id="@+id/editText_main"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter Your Message Here"
-            android:inputType="textLongMessage"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toStartOf="@+id/button_main"
-            app:layout_constraintRight_toLeftOf="@id/button_main"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/move_activity" />
-
-        <TextView
-            android:id="@+id/text_header_reply"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Reply Received"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textStyle="bold"
-            android:visibility="invisible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText_main" />
-
-        <TextView
-            android:id="@+id/text_message_reply"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:visibility="invisible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_header_reply" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_text">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="16dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/edit_text"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/move_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Button
+                        android:id="@+id/move_btn1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage1"
+                        android:text="move to Implicit intents" />
+
+                    <Button
+                        android:id="@+id/move_btn2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage2"
+                        android:text="move to Cafe intents" />
+
+                    <Button
+                        android:id="@+id/move_btn3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage3"
+                        android:text="move to Dialog intents" />
+
+                    <Button
+                        android:id="@+id/move_btn4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage4"
+                        android:text="move to Tab intents" />
+
+                    <Button
+                        android:id="@+id/move_btn5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage5"
+                        android:text="move to Recycler intents" />
+
+                    <Button
+                        android:id="@+id/move_btn6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage6"
+                        android:text="move to Scorekeeper intents" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="launchSecondActivity"
+                    android:text="Send"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/move_activity" />
+
+                <EditText
+                    android:id="@+id/editText_main"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Enter Your Message Here"
+                    android:inputType="textLongMessage"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toStartOf="@+id/button_main"
+                    app:layout_constraintRight_toLeftOf="@id/button_main"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/move_activity" />
 
                 <TextView
-                    android:id="@+id/article_subheading"
-                    android:layout_width="100dp"
+                    android:id="@+id/text_header_reply"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/padding_regular"
-                    android:text="@string/article_subtitle"
-                    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Reply Received"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editText_main" />
+
+                <TextView
+                    android:id="@+id/text_message_reply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_header_reply" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_text"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/article_subheading"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_regular"
+                        android:text="@string/article_subtitle"
+                        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/article"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoLink="web"
+                    android:lineSpacingExtra="@dimen/line_spacing"
+                    android:padding="@dimen/padding_regular"
+                    android:text="@string/article_text"
+                    app:layout_constraintStart_toEndOf="@+id/article_subheading"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/article"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:autoLink="web"
-                android:lineSpacingExtra="@dimen/line_spacing"
-                android:padding="@dimen/padding_regular"
-                android:text="@string/article_text"
-                app:layout_constraintStart_toEndOf="@+id/article_subheading"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
-
 </RelativeLayout>
