@@ -30,4 +30,9 @@
         android:orderInCategory="20"
         app:showAsAction="always"
         android:icon="@drawable/ic_outline_info_24"/>
+
+    <item
+        android:id="@+id/night_mode"
+        android:title="@string/night_mode"
+        app:showAsAction="never" />
 </menu>
