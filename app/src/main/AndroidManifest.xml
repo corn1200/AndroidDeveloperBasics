@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".CardActivity"
+            android:exported="true" />
+        <activity
             android:name=".ScorekeeperActivity"
             android:label="Scorekeeper Activity"
             android:parentActivityName=".MainActivity">
