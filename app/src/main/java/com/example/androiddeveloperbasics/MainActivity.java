@@ -288,4 +288,9 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, ScorekeeperActivity.class);
         startActivity(intent);
     }
+
+    public void moveToPage7(View view) {
+        Intent intent = new Intent(this, CardActivity.class);
+        startActivity(intent);
+    }
 }

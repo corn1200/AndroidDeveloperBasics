@@ -71,6 +71,12 @@
                         android:layout_height="wrap_content"
                         android:onClick="moveToPage6"
                         android:text="move to Scorekeeper intents" />
+                    <Button
+                        android:id="@+id/move_btn7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage7"
+                        android:text="move to Card intents" />
                 </LinearLayout>
 
                 <Button

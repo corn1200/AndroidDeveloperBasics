@@ -15,9 +15,13 @@
  */
 package com.example.androiddeveloperbasics;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +42,11 @@ public class CardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card);
 
+//        액션바 세팅
+        Toolbar myToolBar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Initialize the RecyclerView
         mRecyclerView = (RecyclerView)findViewById(R.id.recyclerview);
 
@@ -55,6 +64,18 @@ public class CardActivity extends AppCompatActivity {
         initializeData();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return new MainToolbar().onSelectItems(item, this);
+    }
+
     /**
      * Method for initializing the sports data from resources.
      */
@@ -66,10 +87,15 @@ public class CardActivity extends AppCompatActivity {
         //Clear the existing data (to avoid duplication)
         mSportsData.clear();
 
+        TypedArray sportsImageResources = getResources()
+                .obtainTypedArray(R.array.sports_images);
+
         //Create the ArrayList of Sports objects with the titles and information about each sport
         for(int i=0;i<sportsList.length;i++){
-            mSportsData.add(new Sport(sportsList[i],sportsInfo[i]));
+            mSportsData.add(new Sport(sportsList[i], sportsInfo[i],
+                    sportsImageResources.getResourceId(i, 0)));
         }
+        sportsImageResources.recycle();
 
         //Notify the adapter of the change
         mAdapter.notifyDataSetChanged();
