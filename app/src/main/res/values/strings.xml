@@ -95,7 +95,7 @@
     <string name="night_mode">Night Mode</string>
     <string name="day_mode">Day Mode</string>
 
-<!--    <string name="app_name">Material Me!</string>-->
+    <!--    <string name="app_name">Material Me!</string>-->
     <string name="title_placeholder">Title</string>
     <string name="news_placeholder">News</string>
     <string name="sports_info_placeholder">Here is some news</string>

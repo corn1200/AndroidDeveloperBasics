@@ -20,12 +20,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /***
  * Main Activity for the Material Me app, a mock sports news application with poor design choices
@@ -101,4 +104,47 @@ public class CardActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
+//    ItemTouchHelper helper = new ItemTouchHelper(
+//            new ItemTouchHelper.SimpleCallback(0,
+//                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+//        @Override
+//        public boolean onMove(RecyclerView recyclerView,
+//                              RecyclerView.ViewHolder viewHolder,
+//                              RecyclerView.ViewHolder target) {
+//            return false;
+//        }
+//
+//        @Override
+//        public void onSwiped(RecyclerView.ViewHolder viewHolder,
+//                             int direction) {
+//            mSportsData.remove(viewHolder.getAdapterPosition());
+//            mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+//            helper.attachToRecyclerView(mRecyclerView);
+//        }
+//    });
+
+    ItemTouchHelper helper = new ItemTouchHelper(
+            new ItemTouchHelper.SimpleCallback(
+                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT
+                            | ItemTouchHelper.DOWN | ItemTouchHelper.UP,
+                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(RecyclerView recyclerView,
+                              RecyclerView.ViewHolder viewHolder,
+                              RecyclerView.ViewHolder target) {
+            int from = viewHolder.getAdapterPosition();
+            int to = target.getAdapterPosition();
+            Collections.swap(mSportsData, from, to);
+            mAdapter.notifyItemMoved(from, to);
+            return true;
+        }
+
+        @Override
+        public void onSwiped(RecyclerView.ViewHolder viewHolder,
+                             int direction) {
+            mSportsData.remove(viewHolder.getAdapterPosition());
+            mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+            helper.attachToRecyclerView(mRecyclerView);
+        }
+    });
 }
