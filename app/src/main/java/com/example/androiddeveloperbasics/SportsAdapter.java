@@ -18,6 +18,7 @@ package com.example.androiddeveloperbasics;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,6 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
     //Member variables
     private ArrayList<Sport> mSportsData;
     private Context mContext;
-    private ImageView mSportsImage;
 
     /**
      * Constructor that passes in the sports data and the context
@@ -72,6 +72,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
     public void onBindViewHolder(ViewHolder holder, int position) {
         //Get current sport
         Sport currentSport = mSportsData.get(position);
+
         //Populate the textviews with data
         holder.bindTo(currentSport);
     }
@@ -95,6 +96,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
         //Member Variables for the TextViews
         private TextView mTitleText;
         private TextView mInfoText;
+        private ImageView mSportsImage;
 
         /**
          * Constructor for the ViewHolder, used in onCreateViewHolder().
@@ -116,13 +118,15 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
             //Populate the textviews with data
             mTitleText.setText(currentSport.getTitle());
             mInfoText.setText(currentSport.getInfo());
-            Glide.with(mContext).load(currentSport.getImageResource()).into(mSportsImage);
+
+//            Load the images into the ImageView using the Glide library.
+            Glide.with(mContext).load(
+                    currentSport.getImageResource()).into(mSportsImage);
         }
 
         @Override
         public void onClick(View v) {
             Sport currentSport = mSportsData.get(getAdapterPosition());
-
             Intent detailIntent = new Intent(mContext, DetailActivity.class);
             detailIntent.putExtra("title", currentSport.getTitle());
             detailIntent.putExtra("image_resource", currentSport.getImageResource());

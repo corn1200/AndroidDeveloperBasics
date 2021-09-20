@@ -19,6 +19,7 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,9 +47,9 @@ public class CardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_card);
 
 //        액션바 세팅
-        Toolbar myToolBar = findViewById(R.id.toolbar);
-        setSupportActionBar(myToolBar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        Toolbar myToolBar = findViewById(R.id.toolbar);
+//        setSupportActionBar(myToolBar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Initialize the RecyclerView
         mRecyclerView = (RecyclerView)findViewById(R.id.recyclerview);
@@ -65,6 +66,40 @@ public class CardActivity extends AppCompatActivity {
 
         //Get the data
         initializeData();
+
+//        Helper class for creating swipe to dismiss and drag and drop
+//        functionality.
+        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper
+                .SimpleCallback(ItemTouchHelper.LEFT
+                | ItemTouchHelper.RIGHT | ItemTouchHelper.DOWN
+                | ItemTouchHelper.UP, ItemTouchHelper.LEFT
+                | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView,
+                                  RecyclerView.ViewHolder viewHolder,
+                                  RecyclerView.ViewHolder target) {
+//                Get the from and to position.
+                int from = viewHolder.getAdapterPosition();
+                int to = target.getAdapterPosition();
+
+//                Swap the items and notify the adapter.
+                Collections.swap(mSportsData, from, to);
+                mAdapter.notifyItemMoved(from, to);
+                return true;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder,
+                                 int direction) {
+//                Remove the item from the dataset.
+                mSportsData.remove(viewHolder.getAdapterPosition());
+//                Notify the adapter.
+                mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+            }
+        });
+
+//        Attach the helper to the RecyclerView.
+        helper.attachToRecyclerView(mRecyclerView);
     }
 
     @Override
@@ -83,68 +118,32 @@ public class CardActivity extends AppCompatActivity {
      * Method for initializing the sports data from resources.
      */
     private void initializeData() {
-        //Get the resources from the XML file
-        String[] sportsList = getResources().getStringArray(R.array.sports_titles);
-        String[] sportsInfo = getResources().getStringArray(R.array.sports_info);
-
-        //Clear the existing data (to avoid duplication)
-        mSportsData.clear();
-
+        // Get the resources from the XML file
+        String[] sportsList = getResources()
+                .getStringArray(R.array.sports_titles);
+        String[] sportsInfo = getResources()
+                .getStringArray(R.array.sports_info);
         TypedArray sportsImageResources = getResources()
                 .obtainTypedArray(R.array.sports_images);
 
-        //Create the ArrayList of Sports objects with the titles and information about each sport
+        // Clear the existing data (to avoid duplication)
+        mSportsData.clear();
+
+        // Create the ArrayList of Sports objects with the titles and
+        // information about each sport
         for(int i=0;i<sportsList.length;i++){
             mSportsData.add(new Sport(sportsList[i], sportsInfo[i],
                     sportsImageResources.getResourceId(i, 0)));
         }
+
+//        Recycle the typed array.
         sportsImageResources.recycle();
 
-        //Notify the adapter of the change
+        // Notify the adapter of the change
         mAdapter.notifyDataSetChanged();
     }
 
-//    ItemTouchHelper helper = new ItemTouchHelper(
-//            new ItemTouchHelper.SimpleCallback(0,
-//                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-//        @Override
-//        public boolean onMove(RecyclerView recyclerView,
-//                              RecyclerView.ViewHolder viewHolder,
-//                              RecyclerView.ViewHolder target) {
-//            return false;
-//        }
-//
-//        @Override
-//        public void onSwiped(RecyclerView.ViewHolder viewHolder,
-//                             int direction) {
-//            mSportsData.remove(viewHolder.getAdapterPosition());
-//            mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
-//            helper.attachToRecyclerView(mRecyclerView);
-//        }
-//    });
-
-    ItemTouchHelper helper = new ItemTouchHelper(
-            new ItemTouchHelper.SimpleCallback(
-                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT
-                            | ItemTouchHelper.DOWN | ItemTouchHelper.UP,
-                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-        @Override
-        public boolean onMove(RecyclerView recyclerView,
-                              RecyclerView.ViewHolder viewHolder,
-                              RecyclerView.ViewHolder target) {
-            int from = viewHolder.getAdapterPosition();
-            int to = target.getAdapterPosition();
-            Collections.swap(mSportsData, from, to);
-            mAdapter.notifyItemMoved(from, to);
-            return true;
-        }
-
-        @Override
-        public void onSwiped(RecyclerView.ViewHolder viewHolder,
-                             int direction) {
-            mSportsData.remove(viewHolder.getAdapterPosition());
-            mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
-            helper.attachToRecyclerView(mRecyclerView);
-        }
-    });
+    public void resetSports(View view) {
+        initializeData();
+    }
 }
