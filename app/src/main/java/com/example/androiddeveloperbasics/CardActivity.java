@@ -47,9 +47,9 @@ public class CardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_card);
 
 //        액션바 세팅
-//        Toolbar myToolBar = findViewById(R.id.toolbar);
-//        setSupportActionBar(myToolBar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Toolbar myToolBar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Initialize the RecyclerView
         mRecyclerView = (RecyclerView)findViewById(R.id.recyclerview);

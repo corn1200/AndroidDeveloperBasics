@@ -137,6 +137,7 @@
         <item>@drawable/img_golf</item>
         <item>@drawable/img_running</item>
         <item>@drawable/img_soccer</item>
+        <item>@drawable/img_swimming</item>
         <item>@drawable/img_tabletennis</item>
         <item>@drawable/img_tennis</item>
     </string-array>
