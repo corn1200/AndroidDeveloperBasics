@@ -24,6 +24,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -67,13 +68,25 @@ public class CardActivity extends AppCompatActivity {
         //Get the data
         initializeData();
 
+//        value 의 integer 파일에 존재하는 상수값을 이용(디바이스 방향에 따라 다름)
+        int gridColumnCount = getResources().getInteger(R.integer.grid_column_count);
+//        RecyclerView 에 GridLayoutManager 를 입혀 방향에 따라 정렬 갯수를 결정함
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, gridColumnCount));
+
+//        디바이스 방향에 따라 스와이프 동작 활성화/비활성화
+        int swipeDirs;
+        if (gridColumnCount > 1) {
+            swipeDirs = 0;
+        } else {
+            swipeDirs = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+        }
+
 //        Helper class for creating swipe to dismiss and drag and drop
 //        functionality.
         ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper
                 .SimpleCallback(ItemTouchHelper.LEFT
                 | ItemTouchHelper.RIGHT | ItemTouchHelper.DOWN
-                | ItemTouchHelper.UP, ItemTouchHelper.LEFT
-                | ItemTouchHelper.RIGHT) {
+                | ItemTouchHelper.UP, swipeDirs) {
             @Override
             public boolean onMove(RecyclerView recyclerView,
                                   RecyclerView.ViewHolder viewHolder,
