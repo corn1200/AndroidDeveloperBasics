@@ -12,9 +12,11 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Headline</item>
     </style>
 
-    <style name="SportsDetailText" parent="TextAppearance.AppCompat.Subhead" />
+    <style name="SportsDetailText" parent="TextAppearance.AppCompat.Headline" />
 
-    <style name="SportsDetailTitle" parent="TextAppearance.AppCompat.Headline" />
+    <style name="SportsDetailTitle" parent="TextAppearance.AppCompat.Display3" />
 
-    <style name="SportsTitle" parent="TextAppearance.AppCompat.Headline" />
+    <style name="SportsTitle" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
 </resources>

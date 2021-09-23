@@ -20,15 +20,15 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <ImageView
-            android:layout_below="@+id/toolbar"
             android:id="@+id/sportsImageDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
             android:adjustViewBounds="true" />
 
         <TextView
             android:id="@+id/titleDetail"
-            style="@style/TextAppearance.AppCompat.Headline"
+            style="@style/SportsDetailTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/sportsImageDetail"
@@ -38,7 +38,7 @@
 
         <TextView
             android:id="@+id/newsTitleDetail"
-            style="@style/TextAppearance.AppCompat.Subhead"
+            style="@style/SportsDetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/sportsImageDetail"
@@ -48,7 +48,7 @@
 
         <TextView
             android:id="@+id/subTitleDetail"
-            style="@style/TextAppearance.AppCompat.Subhead"
+            style="@style/SportsDetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/newsTitleDetail"
