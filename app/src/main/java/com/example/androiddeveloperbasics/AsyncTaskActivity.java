@@ -34,4 +34,5 @@ public class AsyncTaskActivity extends AppCompatActivity {
 
     public void startTask(View view) {
     }
+
 }
