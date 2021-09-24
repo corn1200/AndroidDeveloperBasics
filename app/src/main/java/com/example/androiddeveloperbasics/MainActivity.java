@@ -293,4 +293,9 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, CardActivity.class);
         startActivity(intent);
     }
+
+    public void moveToPage8(View view) {
+        Intent intent = new Intent(this, AsyncTaskActivity.class);
+        startActivity(intent);
+    }
 }
