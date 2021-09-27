@@ -84,6 +84,13 @@
                         android:layout_height="wrap_content"
                         android:onClick="moveToPage8"
                         android:text="move to AsyncTask intents" />
+
+                    <Button
+                        android:id="@+id/move_btn9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage9"
+                        android:text="move to BooksAPI intents" />
                 </LinearLayout>
 
                 <Button
