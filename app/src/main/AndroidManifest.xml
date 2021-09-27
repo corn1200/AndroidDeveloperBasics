@@ -15,7 +15,12 @@
         android:networkSecurityConfig="@xml/network_security_config">
         <activity
             android:name=".BooksApiActivity"
-            android:exported="true" />
+            android:label="BooksApi Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.androiddeveloperbasics.MainActivity" />
+        </activity>
         <activity
             android:name=".AsyncTaskActivity"
             android:label="AsyncTask Activity"
