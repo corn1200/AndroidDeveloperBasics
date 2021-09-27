@@ -99,7 +99,7 @@
     <string name="title_placeholder">Title</string>
     <string name="news_placeholder">News</string>
     <string name="sports_info_placeholder">Here is some news</string>
-    <string name="napping">Napping...</string>
+    <string name="napping" translatable="false">Napping...</string>
 
     <string-array name="sports_titles">
         <item>Baseball</item>
@@ -142,4 +142,10 @@
         <item>@drawable/img_tabletennis</item>
         <item>@drawable/img_tennis</item>
     </string-array>
+
+    <string name="instructions" translatable="false">
+        Enter a book name to find out who wrote the book.</string>
+    <string name="button_text" translatable="false">Search Books</string>
+    <string name="input_hint" translatable="false">Book Title</string>
+    <string name="no_results" translatable="false">"No Results Found"</string>
 </resources>

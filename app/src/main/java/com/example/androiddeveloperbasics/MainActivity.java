@@ -300,5 +300,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void moveToPage9(View view) {
+        Intent intent = new Intent(this, BooksApiActivity.class);
+        startActivity(intent);
     }
 }
