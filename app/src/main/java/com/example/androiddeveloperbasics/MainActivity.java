@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -301,6 +302,11 @@ public class MainActivity extends AppCompatActivity
 
     public void moveToPage9(View view) {
         Intent intent = new Intent(this, BooksApiActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveToPage10(View view) {
+        Intent intent = new Intent(this, BroadcastReceiverActivity.class);
         startActivity(intent);
     }
 }

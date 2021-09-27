@@ -91,6 +91,13 @@
                         android:layout_height="wrap_content"
                         android:onClick="moveToPage9"
                         android:text="move to BooksAPI intents" />
+
+                    <Button
+                        android:id="@+id/move_btn10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage10"
+                        android:text="move to BroadcastReceiver intents" />
                 </LinearLayout>
 
                 <Button
