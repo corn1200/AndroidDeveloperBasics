@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class AsyncTaskActivity extends AppCompatActivity {
     private TextView mTextView;
+    private ProgressBar mProgressBar;
     private static final String TEXT_STATE = "currentText";
 
     @Override
@@ -24,6 +26,7 @@ public class AsyncTaskActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mTextView = findViewById(R.id.textView1);
+        mProgressBar = findViewById(R.id.progressBar);
 
 //        Restore TextView if there is a savedInstanceState
         if (savedInstanceState != null) {
@@ -55,7 +58,7 @@ public class AsyncTaskActivity extends AppCompatActivity {
         mTextView.setText(R.string.napping);
 
 //        Start the AsyncTask.
-        new SimpleAsyncTask(mTextView).execute();
+        new SimpleAsyncTask(mTextView, mProgressBar).execute();
     }
 
 }
