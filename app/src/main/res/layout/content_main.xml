@@ -105,6 +105,13 @@
                         android:layout_height="wrap_content"
                         android:onClick="moveToPage11"
                         android:text="move to Notify intents" />
+
+                    <Button
+                        android:id="@+id/move_btn12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage12"
+                        android:text="move to Alarm intents" />
                 </LinearLayout>
 
                 <Button

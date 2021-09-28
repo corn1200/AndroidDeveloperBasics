@@ -314,4 +314,9 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, NotifyActivity.class);
         startActivity(intent);
     }
+
+    public void moveToPage12(View view) {
+        Intent intent = new Intent(this, AlarmActivity.class);
+        startActivity(intent);
+    }
 }
