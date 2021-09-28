@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.androiddeveloperbasics" >
+    package="com.example.androiddeveloperbasics">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,12 +12,19 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".NotifyActivity"
+            android:label="Notify Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.androiddeveloperbasics.MainActivity" />
+        </activity>
         <activity
             android:name=".BroadcastReceiverActivity"
             android:label="BroadcastReceiver Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
@@ -25,7 +32,7 @@
         <activity
             android:name=".BooksApiActivity"
             android:label="BooksApi Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
@@ -33,7 +40,7 @@
         <activity
             android:name=".AsyncTaskActivity"
             android:label="AsyncTask Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
@@ -41,7 +48,7 @@
         <activity
             android:name=".DetailActivity"
             android:label="Detail Activity"
-            android:parentActivityName=".CardActivity" >
+            android:parentActivityName=".CardActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.CardActivity" />
@@ -49,7 +56,7 @@
         <activity
             android:name=".CardActivity"
             android:label="Card Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
@@ -57,7 +64,7 @@
         <activity
             android:name=".ScorekeeperActivity"
             android:label="Scorekeeper Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
@@ -65,7 +72,7 @@
         <activity
             android:name=".RecyclerActivity"
             android:label="Recycler Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
@@ -73,7 +80,7 @@
         <activity
             android:name=".TabActivity"
             android:label="Tab Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
@@ -81,7 +88,7 @@
         <activity
             android:name=".DialogActivity"
             android:label="Dialog Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
@@ -89,7 +96,7 @@
         <activity
             android:name=".OrderActivity"
             android:label="Order Activity"
-            android:parentActivityName=".CafeActivity" >
+            android:parentActivityName=".CafeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.CafeActivity" />
@@ -97,7 +104,7 @@
         <activity
             android:name=".CafeActivity"
             android:label="Cafe Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
@@ -105,14 +112,14 @@
         <activity
             android:name=".ImplicitIntentActivity"
             android:label="ImplicitIntent Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -122,7 +129,7 @@
         <activity
             android:name=".SecondActivity"
             android:label="Second Activity"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.androiddeveloperbasics.MainActivity" />

@@ -309,4 +309,9 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, BroadcastReceiverActivity.class);
         startActivity(intent);
     }
+
+    public void moveToPage11(View view) {
+        Intent intent = new Intent(this, NotifyActivity.class);
+        startActivity(intent);
+    }
 }

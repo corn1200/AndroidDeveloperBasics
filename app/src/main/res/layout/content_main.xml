@@ -98,6 +98,13 @@
                         android:layout_height="wrap_content"
                         android:onClick="moveToPage10"
                         android:text="move to BroadcastReceiver intents" />
+
+                    <Button
+                        android:id="@+id/move_btn11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage11"
+                        android:text="move to Notify intents" />
                 </LinearLayout>
 
                 <Button

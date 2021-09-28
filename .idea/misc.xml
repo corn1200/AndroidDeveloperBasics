@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable-anydpi-v24/ic_android.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout-land/list_item.xml" value="0.3099647266313933" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_async_task.xml" value="0.3515625" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_books_api.xml" value="0.35280797101449274" />
@@ -12,6 +13,7 @@
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_dialog.xml" value="0.35733695652173914" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_implicit_intent.xml" value="0.35280797101449274" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_main.xml" value="0.2554347826086957" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_notify.xml" value="0.35280797101449274" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_recycler.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_scorekeeper.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/app_bar_main.xml" value="0.2554347826086957" />
