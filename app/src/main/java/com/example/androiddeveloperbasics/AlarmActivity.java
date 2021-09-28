@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 
+import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -12,6 +13,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CompoundButton;
@@ -34,27 +36,57 @@ public class AlarmActivity extends AppCompatActivity {
         setSupportActionBar(myToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
         ToggleButton alarmToggle = findViewById(R.id.alarmToggle);
+
+        Intent notifyIntent = new Intent(this, AlarmReceiver.class);
+
+        boolean alarmUp = (PendingIntent.getBroadcast(this, NOTIFICATION_ID, notifyIntent,
+                PendingIntent.FLAG_NO_CREATE) != null);
+        alarmToggle.setChecked(alarmUp);
+
+        PendingIntent notifyPendingIntent = PendingIntent.getBroadcast
+                (this, NOTIFICATION_ID, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
         alarmToggle.setOnCheckedChangeListener(
                 new CompoundButton.OnCheckedChangeListener() {
                     @Override
-                    public void onCheckedChanged(
-                            CompoundButton buttonView, boolean isChecked) {
+                    public void onCheckedChanged
+                            (CompoundButton buttonView, boolean isChecked) {
                         String toastMessage;
                         if (isChecked) {
-                            deliverNotification(AlarmActivity.this);
+//                            long repeatInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+                            long repeatInterval = 1;
+                            long triggerTime = SystemClock.elapsedRealtime() + repeatInterval;
+
+                            // If the Toggle is turned on,
+                            // set the repeating alarm with a 15 minute interval
+                            if (alarmManager != null) {
+                                alarmManager.setInexactRepeating
+                                        (AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                                                triggerTime, repeatInterval, notifyPendingIntent);
+                            }
+
                             // Set the toast message for the "on" case.
                             toastMessage = "Stand Up Alarm On!";
                         } else {
                             // Cancel notification if the alarm is turned off
                             mNotificationManager.cancelAll();
 
+                            if (alarmManager != null) {
+                                alarmManager.cancel(notifyPendingIntent);
+                            }
+
                             // Set the toast message for the "off" case.
                             toastMessage = "Stand Up Alarm Off!";
                         }
 
                         // Show a toast to say the alarm is turned on or off.
-                        Toast.makeText(AlarmActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AlarmActivity.this, toastMessage
+                                , Toast.LENGTH_SHORT).show();
                     }
                 }
         );
@@ -75,7 +107,6 @@ public class AlarmActivity extends AppCompatActivity {
     }
 
     public void createNotificationChannel() {
-        // Create a notification manager object.
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         // Notification channels are only available in OREO and higher.
@@ -96,21 +127,21 @@ public class AlarmActivity extends AppCompatActivity {
         }
     }
 
-    private void deliverNotification(Context context) {
-        Intent contentIntent = new Intent(context, AlarmActivity.class);
-        PendingIntent contentPendingIntent = PendingIntent.getActivity
-                (context, NOTIFICATION_ID, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(context, PRIMARY_CHANNEL_ID)
-                        .setSmallIcon(R.drawable.ic_stand_up)
-                        .setContentTitle("Stand Up Alert")
-                        .setContentText("You should stand up and walk around now!")
-                        .setContentIntent(contentPendingIntent)
-                        .setPriority(NotificationCompat.PRIORITY_HIGH)
-                        .setAutoCancel(true)
-                        .setDefaults(NotificationCompat.DEFAULT_ALL);
-
-        mNotificationManager.notify(NOTIFICATION_ID, builder.build());
-    }
+//    private void deliverNotification(Context context) {
+//        Intent contentIntent = new Intent(context, AlarmActivity.class);
+//        PendingIntent contentPendingIntent = PendingIntent.getActivity
+//                (context, NOTIFICATION_ID, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+//
+//        NotificationCompat.Builder builder =
+//                new NotificationCompat.Builder(context, PRIMARY_CHANNEL_ID)
+//                        .setSmallIcon(R.drawable.ic_stand_up)
+//                        .setContentTitle("Stand Up Alert")
+//                        .setContentText("You should stand up and walk around now!")
+//                        .setContentIntent(contentPendingIntent)
+//                        .setPriority(NotificationCompat.PRIORITY_HIGH)
+//                        .setAutoCancel(true)
+//                        .setDefaults(NotificationCompat.DEFAULT_ALL);
+//
+//        mNotificationManager.notify(NOTIFICATION_ID, builder.build());
+//    }
 }
