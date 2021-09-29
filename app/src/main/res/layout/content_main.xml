@@ -31,73 +31,18 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <Button
-                        android:id="@+id/move_btn1"
+                        android:id="@+id/move_btn13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="moveToPage1"
-                        android:text="move to Implicit intents" />
+                        android:onClick="moveToPage13"
+                        android:text="move to Scheduler intents" />
 
                     <Button
-                        android:id="@+id/move_btn2"
+                        android:id="@+id/move_btn12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="moveToPage2"
-                        android:text="move to Cafe intents" />
-
-                    <Button
-                        android:id="@+id/move_btn3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="moveToPage3"
-                        android:text="move to Dialog intents" />
-
-                    <Button
-                        android:id="@+id/move_btn4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="moveToPage4"
-                        android:text="move to Tab intents" />
-
-                    <Button
-                        android:id="@+id/move_btn5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="moveToPage5"
-                        android:text="move to Recycler intents" />
-
-                    <Button
-                        android:id="@+id/move_btn6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="moveToPage6"
-                        android:text="move to Scorekeeper intents" />
-                    <Button
-                        android:id="@+id/move_btn7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="moveToPage7"
-                        android:text="move to Card intents" />
-
-                    <Button
-                        android:id="@+id/move_btn8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="moveToPage8"
-                        android:text="move to AsyncTask intents" />
-
-                    <Button
-                        android:id="@+id/move_btn9"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="moveToPage9"
-                        android:text="move to BooksAPI intents" />
-
-                    <Button
-                        android:id="@+id/move_btn10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="moveToPage10"
-                        android:text="move to BroadcastReceiver intents" />
+                        android:onClick="moveToPage12"
+                        android:text="move to Alarm intents" />
 
                     <Button
                         android:id="@+id/move_btn11"
@@ -107,11 +52,75 @@
                         android:text="move to Notify intents" />
 
                     <Button
-                        android:id="@+id/move_btn12"
+                        android:id="@+id/move_btn10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="moveToPage12"
-                        android:text="move to Alarm intents" />
+                        android:onClick="moveToPage10"
+                        android:text="move to BroadcastReceiver intents" />
+
+                    <Button
+                        android:id="@+id/move_btn9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage9"
+                        android:text="move to BooksAPI intents" />
+
+                    <Button
+                        android:id="@+id/move_btn8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage8"
+                        android:text="move to AsyncTask intents" />
+
+                    <Button
+                        android:id="@+id/move_btn7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage7"
+                        android:text="move to Card intents" />
+
+                    <Button
+                        android:id="@+id/move_btn6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage6"
+                        android:text="move to Scorekeeper intents" />
+
+                    <Button
+                        android:id="@+id/move_btn5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage5"
+                        android:text="move to Recycler intents" />
+
+                    <Button
+                        android:id="@+id/move_btn4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage4"
+                        android:text="move to Tab intents" />
+
+                    <Button
+                        android:id="@+id/move_btn3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage3"
+                        android:text="move to Dialog intents" />
+
+                    <Button
+                        android:id="@+id/move_btn2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage2"
+                        android:text="move to Cafe intents" />
+
+                    <Button
+                        android:id="@+id/move_btn1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage1"
+                        android:text="move to Implicit intents" />
+
                 </LinearLayout>
 
                 <Button

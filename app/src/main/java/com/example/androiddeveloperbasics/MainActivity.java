@@ -319,4 +319,9 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, AlarmActivity.class);
         startActivity(intent);
     }
+
+    public void moveToPage13(View view) {
+        Intent intent = new Intent(this, SchedulerActivity.class);
+        startActivity(intent);
+    }
 }
