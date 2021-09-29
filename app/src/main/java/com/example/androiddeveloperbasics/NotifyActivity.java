@@ -1,9 +1,5 @@
 package com.example.androiddeveloperbasics;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.NotificationCompat;
-
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -21,6 +17,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+
 public class NotifyActivity extends AppCompatActivity {
     private Button button_notify;
     private Button button_update;
@@ -30,6 +30,8 @@ public class NotifyActivity extends AppCompatActivity {
     private static final int NOTIFICATION_ID = 0;
     private static final String ACTION_UPDATE_NOTIFICATION =
             BuildConfig.APPLICATION_ID + ".ACTION_UPDATE_NOTIFICATION";
+    private static final String ACTION_CANCEL_NOTIFICATION =
+            BuildConfig.APPLICATION_ID + ".ACTION_CANCEL_NOTIFICATION";
     private NotificationReceiver mReceiver = new NotificationReceiver();
 
     @Override
@@ -78,6 +80,7 @@ public class NotifyActivity extends AppCompatActivity {
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(ACTION_UPDATE_NOTIFICATION);
+        filter.addAction(ACTION_CANCEL_NOTIFICATION);
 
         registerReceiver(mReceiver, filter);
     }
@@ -144,6 +147,9 @@ public class NotifyActivity extends AppCompatActivity {
         Intent notificationIntent = new Intent(this, NotifyActivity.class);
         PendingIntent notificationPendingIntent = PendingIntent.getActivity(this,
                 NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent cancelIntent = new Intent(ACTION_CANCEL_NOTIFICATION);
+        PendingIntent cancelPendingIntent = PendingIntent.getBroadcast
+                (this, NOTIFICATION_ID, cancelIntent, PendingIntent.FLAG_ONE_SHOT);
 
         NotificationCompat.Builder notifyBuilder =
                 new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
@@ -153,6 +159,7 @@ public class NotifyActivity extends AppCompatActivity {
                         .setContentIntent(notificationPendingIntent)
                         .setPriority(NotificationCompat.PRIORITY_HIGH)
                         .setDefaults(NotificationCompat.DEFAULT_ALL)
+                        .setDeleteIntent(cancelPendingIntent)
                         .setAutoCancel(true);
 
         return notifyBuilder;
@@ -173,7 +180,18 @@ public class NotifyActivity extends AppCompatActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            updateNotification();
+            String intentAction = intent.getAction();
+
+            if (intentAction != null) {
+                switch (intentAction) {
+                    case ACTION_UPDATE_NOTIFICATION:
+                        updateNotification();
+                        break;
+                    case ACTION_CANCEL_NOTIFICATION:
+                        cancelNotification();
+                        break;
+                }
+            }
         }
     }
 }
