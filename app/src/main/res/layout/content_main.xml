@@ -31,6 +31,13 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <Button
+                        android:id="@+id/move_btn14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage14"
+                        android:text="move to SharedPrefs intents" />
+
+                    <Button
                         android:id="@+id/move_btn13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

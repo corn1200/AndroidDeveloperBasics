@@ -13,9 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".SharedPrefsActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.androiddeveloperbasics.MainActivity" />
+        </activity>
+
         <service
             android:name=".NotificationJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
         <activity
             android:name=".SchedulerActivity"
             android:label="@string/app_name"
