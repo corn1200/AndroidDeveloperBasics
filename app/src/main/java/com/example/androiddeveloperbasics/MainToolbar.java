@@ -19,10 +19,11 @@ public class MainToolbar {
 //        getString 은 context 가 존재하는 환경에서 실행 되기 때문에 함수 호출 컨텍스트를 불러옴
         Context context = activity.getApplicationContext();
         switch (item.getItemId()) {
+            case android.R.id.home:
             case R.id.action_order:
 //                displayToast(context.getString(R.string.action_order_message), context);
-                Intent intent = new Intent(context, OrderActivity.class);
-                activity.startActivity(intent);
+                Intent orderIntent = new Intent(context, OrderActivity.class);
+                activity.startActivity(orderIntent);
                 return true;
             case R.id.action_status:
                 displayToast(context.getString(R.string.action_status_message), context);
@@ -34,7 +35,8 @@ public class MainToolbar {
                 displayToast(context.getString(R.string.action_contact_message), context);
                 return true;
             case R.id.action_settings:
-                displayToast(context.getString(R.string.action_settings), context);
+                Intent settingsIntent = new Intent(context, SettingsActivity.class);
+                activity.startActivity(settingsIntent);
                 return true;
             case R.id.night_mode:
 //                Get the night mode state of the app.

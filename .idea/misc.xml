@@ -3,9 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dep1/AppData/Local/Android/Sdk/platforms/android-29/data/res/layout/auto_complete_list.xml" value="0.3591485507246377" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable-anydpi-v24/ic_android.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable-anydpi-v24/ic_job_running.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable-anydpi-v24/ic_update.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/button_background.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_baseline_video_library_24.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_favorite_black_48dp.xml" value="0.38229166666666664" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_minus.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_outline_info_24.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_plus.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_reset.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/drawable/ic_settings.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout-land/list_item.xml" value="0.3099647266313933" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_alarm.xml" value="0.35280797101449274" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_async_task.xml" value="0.3515625" />
@@ -17,19 +30,28 @@
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_implicit_intent.xml" value="0.35280797101449274" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_main.xml" value="0.2554347826086957" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_notify.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_order.xml" value="0.34646739130434784" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_recycler.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_scheduler.xml" value="0.36367753623188404" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_scorekeeper.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_settings.xml" value="0.3591485507246377" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/activity_shared_prefs.xml" value="0.36367753623188404" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/app_bar_main.xml" value="0.2554347826086957" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/content_card.xml" value="0.3654891304347826" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/content_main.xml" value="0.2554347826086957" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/content_recycler.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_date_picker.xml" value="0.2046875" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_settings.xml" value="0.3591485507246377" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_tab3.xml" value="0.2046875" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/fragment_time_picker.xml" value="0.2046875" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/list_item.xml" value="0.3654891304347826" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/nav_header_main.xml" value="0.2046875" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/layout/wordlist_item.xml" value="0.2046875" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/activity_main_drawer.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/menu.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/menu/menu_context.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/xml/network_security_config.xml" value="0.2046875" />
+        <entry key="..\:/Users/dep1/StudioProjects/AndroidDeveloperBasics/app/src/main/res/xml/preferences.xml" value="0.3591485507246377" />
       </map>
     </option>
   </component>

@@ -29,6 +29,10 @@
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_baseline_send_24"
                 android:title="Send" />
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="Settings" />
         </menu>
     </item>
 </menu>

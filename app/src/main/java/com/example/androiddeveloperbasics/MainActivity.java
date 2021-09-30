@@ -243,6 +243,11 @@ public class MainActivity extends AppCompatActivity
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.chose_send));
                 return true;
+            case R.id.nav_settings:
+                // Handle the settings action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivity(settingsIntent);
             default:
                 return false;
         }

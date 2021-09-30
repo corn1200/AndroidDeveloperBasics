@@ -8,6 +8,8 @@ import androidx.core.content.ContextCompat;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,6 +61,18 @@ public class SharedPrefsActivity extends AppCompatActivity {
         mShowCountTextView.setText(String.format("%s", mCount));
         mColor = mPreferences.getInt(COLOR_KEY, mColor);
         mShowCountTextView.setBackgroundColor(mColor);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return new MainToolbar().onSelectItems(item, this);
     }
 
     public void changeBackground(View view) {
