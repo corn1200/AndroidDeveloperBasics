@@ -19,7 +19,7 @@ public class MainToolbar {
 //        getString 은 context 가 존재하는 환경에서 실행 되기 때문에 함수 호출 컨텍스트를 불러옴
         Context context = activity.getApplicationContext();
         switch (item.getItemId()) {
-            case android.R.id.home:
+//            case android.R.id.home:
             case R.id.action_order:
 //                displayToast(context.getString(R.string.action_order_message), context);
                 Intent orderIntent = new Intent(context, OrderActivity.class);
