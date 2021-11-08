@@ -337,4 +337,9 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, SharedPrefsActivity.class);
         startActivity(intent);
     }
+
+    public void moveToPage15(View view) {
+        Intent intent = new Intent(this, RoomWords.class);
+        startActivity(intent);
+    }
 }

@@ -31,6 +31,13 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <Button
+                        android:id="@+id/move_btn15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="moveToPage15"
+                        android:text="move to RoomWordsSample intents" />
+
+                    <Button
                         android:id="@+id/move_btn14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
