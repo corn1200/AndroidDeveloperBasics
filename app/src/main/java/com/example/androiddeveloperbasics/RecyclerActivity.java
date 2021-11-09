@@ -48,7 +48,7 @@ public class RecyclerActivity extends AppCompatActivity {
 //        Get a handle to the RecyclerView.
         mRecyclerView = findViewById(R.id.recyclerview);
 //        Create an adapter and supply the date to be displayed.
-        mAdapter = new WordListAdapter(this, mWordList);
+        mAdapter = new WordListAdapter(this);
 //        Connect the adapter with the RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
 //        Give the RecyclerView a default layout manager.

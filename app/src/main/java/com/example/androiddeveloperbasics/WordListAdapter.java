@@ -10,61 +10,60 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
-    private final LinkedList<String> mWordList;
-    private LayoutInflater mInflater;
+    private final LayoutInflater mInflater;
+    private List<Word> mWords; // 캐시된 word 사본
 
-    public WordListAdapter(Context context,
-                           LinkedList<String> mWordList) {
+    WordListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
-        this.mWordList = mWordList;
     }
 
     @NonNull
     @Override
     public WordViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
                                              int viewType) {
-        View mItemView = mInflater.inflate(R.layout.wordlist_item,
+        View itemView = mInflater.inflate(R.layout.wordlist_item,
                 parent, false);
-        return new WordViewHolder(mItemView, this);
+        return new WordViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull WordViewHolder holder,
                                  int position) {
-        String mCurrent = mWordList.get(position);
-        holder.wordItemView.setText(mCurrent);
+        if (mWords != null) {
+            Word current = mWords.get(position);
+            holder.wordItemView.setText(current.getWord());
+        } else {
+            // 데이터가 아직 준비되지 않은 경우를 다룹니다.
+            holder.wordItemView.setText("No Word");
+        }
     }
 
+    void setWords(List<Word> words) {
+        mWords = words;
+        notifyDataSetChanged();
+    }
+
+
+    // getItemCount() 는 여러번 호출되고, 처음 호출 될 경우,
+    // mWords 는 업데이트 되지 않습니다.(처음에는 null 이며 null 값을 반환할 수 없음을 의미함)
     @Override
     public int getItemCount() {
-        return mWordList.size();
+        if (mWords != null) {
+            return mWords.size();
+        } else {
+            return 0;
+        }
     }
 
-    public class WordViewHolder extends RecyclerView.ViewHolder
-            implements View.OnClickListener {
-        public final TextView wordItemView;
-        final WordListAdapter mAdapter;
+    public class WordViewHolder extends RecyclerView.ViewHolder {
+        private final TextView wordItemView;
 
-        public WordViewHolder(View itemView, WordListAdapter adapter) {
+        private WordViewHolder(@NonNull View itemView) {
             super(itemView);
-            wordItemView = itemView.findViewById(R.id.word);
-            this.mAdapter = adapter;
-            itemView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-//            Get the position of the item that was clicked.
-            int mPosition = getLayoutPosition();
-//            Use that to access the affected item in mWordList.
-            String element = mWordList.get(mPosition);
-//            Change the word in the mWordList.
-            mWordList.set(mPosition, "Clicked!" + element);
-//            Notify the adapter, that the data has changed so it can
-//            update the RecyclerView to display the data.
-            mAdapter.notifyDataSetChanged();
+            wordItemView = itemView.findViewById(R.id.textView);
         }
     }
 }
