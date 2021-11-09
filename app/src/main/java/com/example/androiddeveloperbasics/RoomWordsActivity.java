@@ -2,6 +2,8 @@ package com.example.androiddeveloperbasics;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,7 +11,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
 public class RoomWordsActivity extends AppCompatActivity {
+    private WordViewModel mWordViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,15 @@ public class RoomWordsActivity extends AppCompatActivity {
         final RoomWordListAdapter adapter = new RoomWordListAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mWordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
+        mWordViewModel.getAllWords().observe(this, new Observer<List<Word>>() {
+            @Override
+            public void onChanged(List<Word> words) {
+                // 어댑터에 있는 카피된 단어의 캐시를 업데이트합니다
+                adapter.setWords(words);
+            }
+        });
     }
 
     @Override
