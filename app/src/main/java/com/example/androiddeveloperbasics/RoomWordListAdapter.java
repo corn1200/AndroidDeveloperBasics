@@ -19,6 +19,10 @@ public class RoomWordListAdapter extends RecyclerView.Adapter<RoomWordListAdapte
         mInflater = LayoutInflater.from(context);
     }
 
+    public Word getWordAtPosition(int position) {
+        return mWords.get(position);
+    }
+
     @NonNull
     @Override
     public WordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
