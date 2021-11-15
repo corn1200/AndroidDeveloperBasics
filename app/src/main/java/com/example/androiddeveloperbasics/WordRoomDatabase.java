@@ -53,7 +53,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         protected Void doInBackground(Void... voids) {
             // 매번 깨끗한 데이터베이스로 앱을 시작함
             // 데이터베이스가 처음 생성될 때만 채운다면 필요하지 않습니다.
-            mDao.deleteAll();
+//            mDao.deleteAll();
 
             for (int i = 0; i <= words.length - 1; i++) {
                 Word word = new Word(words[i]);

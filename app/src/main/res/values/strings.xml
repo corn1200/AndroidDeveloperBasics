@@ -148,12 +148,15 @@
     <string name="button_text" translatable="false">Search Books</string>
     <string name="input_hint" translatable="false">Book Title</string>
     <string name="no_results" translatable="false">"No Results Found"</string>
-    <string name="loading">Loading...</string>
-    <string name="no_search_term">Please enter a search term</string>
-    <string name="no_network">Please check your network connection and try again.</string>
-    <string name="chose_settings">You chose Settings.</string>
-    <string name="switch_title">Settings option</string>
-    <string name="switch_summary">Turn this option on or off</string>
+    <string name="loading" translatable="false">Loading...</string>
+    <string name="no_search_term" translatable="false">Please enter a search term</string>
+    <string name="no_network" translatable="false">Please check your network connection and try again.</string>
+    <string name="chose_settings" translatable="false">You chose Settings.</string>
+    <string name="switch_title" translatable="false">Settings option</string>
+    <string name="switch_summary" translatable="false">Turn this option on or off</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="hint_word" translatable="false">Word...</string>
+    <string name="button_save" translatable="false">Save</string>
+    <string name="empty_not_saved" translatable="false">Word not saved because it is empty.</string>
 </resources>
