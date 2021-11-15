@@ -12,6 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 @Database(entities = {Word.class}, version = 1, exportSchema = false)
 public abstract class WordRoomDatabase extends RoomDatabase {
     public abstract WordDao wordDao();
+
     private static WordRoomDatabase INSTANCE;
 
     public static WordRoomDatabase getDatabase(final Context context) {
@@ -55,9 +56,12 @@ public abstract class WordRoomDatabase extends RoomDatabase {
             // 데이터베이스가 처음 생성될 때만 채운다면 필요하지 않습니다.
 //            mDao.deleteAll();
 
-            for (int i = 0; i <= words.length - 1; i++) {
-                Word word = new Word(words[i]);
-                mDao.insert(word);
+//            만약 word 데이터를 가지고 있지 않다면, 초기 단어의 목록을 만듭니다.
+            if (mDao.getAnyWord().length < 1) {
+                for (int i = 0; i <= words.length - 1; i++) {
+                    Word word = new Word(words[i]);
+                    mDao.insert(word);
+                }
             }
             return null;
         }
