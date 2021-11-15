@@ -86,12 +86,23 @@ public class RoomWordsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu_word_activity, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return new MainToolbar().onSelectItems(item, this);
+        int id = item.getItemId();
+
+        if (id == R.id.clear_data) {
+//            확인을 위해 토스트 메세지 추가
+            Toast.makeText(this, "Clearing the data...", Toast.LENGTH_SHORT).show();
+
+//            기존의 데이터를 삭제
+            mWordViewModel.deleteAll();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -159,4 +159,5 @@
     <string name="hint_word" translatable="false">Word...</string>
     <string name="button_save" translatable="false">Save</string>
     <string name="empty_not_saved" translatable="false">Word not saved because it is empty.</string>
+    <string name="clear_all_data">Clear all data</string>
 </resources>
