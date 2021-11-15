@@ -29,6 +29,10 @@ public class WordRepository {
         new DeleteAllWordsAsyncTask(mWordDao).execute();
     }
 
+    public void deleteWord(Word word) {
+        new deleteWordAsyncTask(mWordDao).execute(word);
+    }
+
     private static class InsertAsyncTask extends AsyncTask<Word, Void, Void> {
         private WordDao mAsyncTaskDao;
 
@@ -57,4 +61,17 @@ public class WordRepository {
         }
     }
 
+    private static class deleteWordAsyncTask extends AsyncTask<Word, Void, Void> {
+        private WordDao mAsyncTaskDao;
+
+        deleteWordAsyncTask(WordDao dao) {
+            mAsyncTaskDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(Word... words) {
+            mAsyncTaskDao.deleteWord(words[0]);
+            return null;
+        }
+    }
 }
