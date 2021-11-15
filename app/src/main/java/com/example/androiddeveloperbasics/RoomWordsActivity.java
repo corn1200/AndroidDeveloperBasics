@@ -26,7 +26,6 @@ import java.util.List;
 
 public class RoomWordsActivity extends AppCompatActivity {
     private WordViewModel mWordViewModel;
-    public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,35 +44,32 @@ public class RoomWordsActivity extends AppCompatActivity {
 
         FloatingActionButton addWordFAB = findViewById(R.id.fab);
 
-//        ActivityResultLauncher<Intent> startActivityResultLauncher =
-//                registerForActivityResult(
-//                        new ActivityResultContracts.StartActivityForResult(),
-//                        new ActivityResultCallback<ActivityResult>() {
-//                            @Override
-//                            public void onActivityResult(ActivityResult result) {
-//                                if (result.getResultCode() == RESULT_OK) {
-//                                    Word word = new Word(result.getData()
-//                                            .getStringExtra(NewWordActivity.EXTRA_REPLY));
-//                                    mWordViewModel.insert(word);
-//                                } else {
-//                                    Toast.makeText(
-//                                            getApplicationContext(),
-//                                            R.string.empty_not_saved,
-//                                            Toast.LENGTH_LONG).show();
-//                                }
-//                            }
-//                        }
-//                );
+        ActivityResultLauncher<Intent> startActivityResultLauncher =
+                registerForActivityResult(
+                        new ActivityResultContracts.StartActivityForResult(),
+                        new ActivityResultCallback<ActivityResult>() {
+                            @Override
+                            public void onActivityResult(ActivityResult result) {
+                                if (result.getResultCode() == RESULT_OK) {
+                                    Word word = new Word(result.getData()
+                                            .getStringExtra(NewWordActivity.EXTRA_REPLY));
+                                    mWordViewModel.insert(word);
+                                } else {
+                                    Toast.makeText(
+                                            getApplicationContext(),
+                                            R.string.empty_not_saved,
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        }
+                );
 
         addWordFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent
-//                        (RoomWordsActivity.this, NewWordActivity.class);
-//                startActivityResultLauncher.launch(intent);
                 Intent intent = new Intent
                         (RoomWordsActivity.this, NewWordActivity.class);
-                startActivityForResult(intent, NEW_WORD_ACTIVITY_REQUEST_CODE);
+                startActivityResultLauncher.launch(intent);
             }
         });
 
@@ -97,20 +93,5 @@ public class RoomWordsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return new MainToolbar().onSelectItems(item, this);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
-            mWordViewModel.insert(word);
-        } else {
-            Toast.makeText(
-                    getApplicationContext(),
-                    R.string.empty_not_saved,
-                    Toast.LENGTH_LONG).show();
-        }
     }
 }
