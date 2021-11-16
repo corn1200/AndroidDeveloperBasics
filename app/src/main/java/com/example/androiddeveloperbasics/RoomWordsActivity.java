@@ -1,11 +1,17 @@
 package com.example.androiddeveloperbasics;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
@@ -14,19 +20,14 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 public class RoomWordsActivity extends AppCompatActivity {
+    public static final String EXTRA_DATA_UPDATE_WORD = "extra_word_to_be_updated";
+    public static final String EXTRA_DATA_ID = "extra_data_id";
+
     private WordViewModel mWordViewModel;
 
     @Override
@@ -43,6 +44,15 @@ public class RoomWordsActivity extends AppCompatActivity {
         final RoomWordListAdapter adapter = new RoomWordListAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mWordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
+        mWordViewModel.getAllWords().observe(this, new Observer<List<Word>>() {
+            @Override
+            public void onChanged(List<Word> words) {
+                // 어댑터에 있는 카피된 단어의 캐시를 업데이트합니다
+                adapter.setWords(words);
+            }
+        });
 
         FloatingActionButton addWordFAB = findViewById(R.id.fab);
 
@@ -75,15 +85,6 @@ public class RoomWordsActivity extends AppCompatActivity {
             }
         });
 
-        mWordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
-        mWordViewModel.getAllWords().observe(this, new Observer<List<Word>>() {
-            @Override
-            public void onChanged(List<Word> words) {
-                // 어댑터에 있는 카피된 단어의 캐시를 업데이트합니다
-                adapter.setWords(words);
-            }
-        });
-
 //        아이템을 삭제하기 위한 recycler view 아이템 스와이프 기능을 추가
         ItemTouchHelper helper = new ItemTouchHelper(
                 new ItemTouchHelper.SimpleCallback(0,
@@ -109,6 +110,47 @@ public class RoomWordsActivity extends AppCompatActivity {
                 });
 
         helper.attachToRecyclerView(recyclerView);
+
+        ActivityResultLauncher<Intent> startUpdateActivityResultLauncher =
+                registerForActivityResult(
+                        new ActivityResultContracts.StartActivityForResult(),
+                        new ActivityResultCallback<ActivityResult>() {
+                            @Override
+                            public void onActivityResult(ActivityResult result) {
+                                if (result.getResultCode() == RESULT_OK) {
+                                    String wordData = result.getData()
+                                            .getStringExtra(NewWordActivity.EXTRA_REPLY);
+                                    int id = result.getData().getIntExtra
+                                            (NewWordActivity.EXTRA_REPLY_ID, -1);
+
+                                    if (id != -1) {
+                                        mWordViewModel.update(new Word(id, wordData));
+                                    } else {
+                                        Toast.makeText(getApplicationContext(),
+                                                R.string.unable_to_update,
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                                } else {
+                                    Toast.makeText(
+                                            getApplicationContext(),
+                                            R.string.empty_not_saved,
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        }
+                );
+
+        adapter.setOnItemClickListener(new RoomWordListAdapter.ClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                Word word = adapter.getWordAtPosition(position);
+                Intent intent = new Intent
+                        (RoomWordsActivity.this, NewWordActivity.class);
+                intent.putExtra(EXTRA_DATA_UPDATE_WORD, word.getWord());
+                intent.putExtra(EXTRA_DATA_ID, word.getId());
+                startUpdateActivityResultLauncher.launch(intent);
+            }
+        });
     }
 
     @Override

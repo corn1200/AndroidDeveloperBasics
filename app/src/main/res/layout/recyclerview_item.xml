@@ -9,6 +9,7 @@
         style="@style/text_view_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="8dp"
         android:text="placeholder text" />
 
 </LinearLayout>

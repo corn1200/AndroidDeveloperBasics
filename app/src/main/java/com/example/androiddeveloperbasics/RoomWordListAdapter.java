@@ -14,6 +14,7 @@ import java.util.List;
 public class RoomWordListAdapter extends RecyclerView.Adapter<RoomWordListAdapter.WordViewHolder> {
     private final LayoutInflater mInflater;
     private List<Word> mWords; // 캐시된 Word 사본
+    private static ClickListener clickListener;
 
     RoomWordListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -57,12 +58,26 @@ public class RoomWordListAdapter extends RecyclerView.Adapter<RoomWordListAdapte
         }
     }
 
+    public interface ClickListener {
+        void onItemClick(View v, int position);
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        RoomWordListAdapter.clickListener = clickListener;
+    }
+
     class WordViewHolder extends RecyclerView.ViewHolder {
         private final TextView wordItemView;
 
         public WordViewHolder(@NonNull View itemView) {
             super(itemView);
             wordItemView = itemView.findViewById(R.id.textView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClick(view, getAdapterPosition());
+                }
+            });
         }
     }
 }
